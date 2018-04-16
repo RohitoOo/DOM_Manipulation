@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Word Count</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="icon" href="twitter.jpg" >
+
+  <meta property="og:title" content="Rohito's Creations">
+   <meta property="og:description" content="Word Count">
+   <meta property="og:image" content="/rohito.jpg">
+   <meta property="og:url" content="https://www.rohito.com">
+
+
+
+
+</head>
+
+<!-- getElementsByTagName does not work? -->
+<body id="body" >
+
+
+
+<textarea name="" id="text_input"onkeyup= "copy_function() ; count_function() " ></textarea>
+<textarea readonly name="" id="new_input" ></textarea>
+<h3 id="word_count">Start Typing</h3>
+<image src="0.jpg"id="image"></image>
+
+
+
+<image src="mario.jpg" alt="" id="mario">
+
+</body>
+
+
+<style>
+
+body{
+
+  text-align: center;
+  font-family: fantasy;
+}
+
+h3{
+font-size: 30px;
+}
+
+textarea{
+
+/* appearance: none; */
+height: 100px;
+width: 300px;
+border: none;
+text-align: center;
+text-align: middle;
+padding-top: 50px;
+font-size: 30px;
+
+outline: none;
+
+}
+
+#image{
+
+  width: 400px;
+  height: 300px;
+  border-radius: 100px;
+  border: none;
+}
+</style>
+
+<style>
+
+#mario {
+
+
+
+width: 100px;
+height: 100px;
+position: absolute;
+
+
+
+animation: drive 5s infinite linear , jump 1s  infinite;
+
+
+}
+@keyframes drive {
+
+
+from{  transform: translateY(700px) translateX(-700px);    }
+
+
+to {transform: translateY(-100px) translateX(-700px) ; }
+
+}
+
+
+@keyframes jump {
+
+  0% {top: 0px}
+  50% {top: 50px}
+  100% {top: 0px}
+
+}
+
+
+
+}
+
+
+
+
+</style>
+
+
+
+
+
+<script>
+
+
+
+
+var copy_function = function copy (){
+
+var input = document.getElementById("text_input").value
+
+document.getElementById("new_input").innerHTML = input
+}
+
+
+var count_function = function count(){
+
+var count = document.getElementById("text_input").value.length
+
+document.getElementById("word_count").innerHTML = count ;
+
+var image_holder = document.getElementById('image')
+
+
+switch(count){
+
+case 1:
+
+    image_holder.src = "1.jpg" ;
+    break;
+case 5:
+
+        image_holder.src = "5.jpg" ;
+        break;
+case 7:
+
+        image_holder.src = "7.jpg" ;
+        break;
+case 22:
+
+            image_holder.src = "22.jpg" ;
+            break;
+case 4:
+
+                image_holder.src = "4.jpg" ;
+                break;
+case 0:
+
+image_holder.src = "0.jpg" ;
+break;
+case 8:
+
+image_holder.src = "8.jpg" ;
+break;
+
+
+
+}
+
+}
+
+window.onload = function() {
+  var input = document.getElementById("text_input").focus();
+}
+
+
+</script>
+
+
+<div id="footer"class="card-footer bg-info">
+<footer > Designed at &nbsp <a href="http://thehackingschool.com/"> The Hacking School &nbsp </a><sup>&reg</sup>
+</footer>
+
+</div>
+
+
+</html>
